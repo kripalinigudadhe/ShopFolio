@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ShopFolio — Redefine Your Shopping</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="topbar">
+    <div class="brand">
+      <img src="https://cdn-icons-png.flaticon.com/512/891/891462.png" alt="logo" />
+      <h1>ShopFolio</h1>
+    </div>
+    <div class="controls">
+      <button id="open-login">Login / Register</button>
+      <!-- <span id="user-badge" class="hidden"></span> -->
+      <button id="logout" class="hidden">Logout</button>
+      <button id="view-cart">🛒 Cart (<span id="cart-count">0</span>)</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+  <p id="welcome-msg" class="welcome"></p> <!-- Add this line -->
+  <h2>Discover Products You’ll Love, Effortlessly.</h2>
+  <p>Welcome to <strong>ShopFolio</strong> — your one-stop marketplace for curated gadgets, fashion, lifestyle & more. 
+     Experience elegance, innovation, and convenience — all in one place!</p>
+</header>
+
+
+  <!-- Main Product Container -->
+  <main class="container">
+    <section class="products">
+      <h3>Featured Products</h3>
+      <p class="section-intro">Handpicked favorites — where design meets functionality. 
+        Shop smart with <strong>ShopFolio’s</strong> most loved products!</p>
+
+      <div id="product-grid" class="grid">
+  <!-- Product Cards -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="Headphones">
+    <h4>Noise-Cancelling Headphones</h4>
+    <p>Immersive sound and comfort for your daily groove.</p>
+    <p class="price">$89.99</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" alt="Sneakers">
+    <h4>Comfort Runner Sneakers</h4>
+    <p>Run light and stay stylish with premium comfort soles.</p>
+    <p class="price">$59.99</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://th.bing.com/th?id=OPAC.owty%2bG%2bOU84hig474C474&w=592&h=550&o=5&cb=12&dpr=1.3&pid=21.1" alt="Smart Watch">
+    <h4>Pulse Smart Watch</h4>
+    <p>Track health, stay connected, and look sleek all day.</p>
+    <p class="price">$129.00</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc" alt="Backpack">
+    <h4>UrbanFlex Backpack</h4>
+    <p>Minimalist design, maximum utility — built for explorers.</p>
+    <p class="price">$49.50</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f" alt="Camera">
+    <h4>ProShot Camera</h4>
+    <p>Capture your world in stunning detail and clarity.</p>
+    <p class="price">$399.00</p>
+    <button class="add-to-cart">Add to Cart</button>
+  </div>
+
+</div>
+
+
+    <!-- Cart Sidebar -->
+    <aside class="panel" id="cart-panel">
+      <h4>Your Cart</h4>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <div>Total: $<span id="cart-total">0.00</span></div>
+        <button id="checkout-btn">Checkout</button>
+      </div>
+    </aside>
+  </main>
+
+    <!-- 🛒 PLACE ORDER SECTION -->
+    <section id="place-order" class="hidden">
+      <h3>Place Your Order</h3>
+      <p>Review your details and confirm your order below:</p>
+
+      <form id="order-form">
+        <label>Full Name:</label>
+        <input type="text" id="order-name" placeholder="John Doe" required />
+
+        <label>Shipping Address:</label>
+        <input type="text" id="order-address" placeholder="123 Main Street, City" required />
+
+        <label>Payment Method:</label>
+        <select id="payment-method" required>
+          <option value="">Select Payment</option>
+          <option value="cod">Cash on Delivery</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="upi">UPI</option>
+        </select>
+
+        <button type="submit" id="confirm-order">Confirm Order</button>
+      </form>
+    </section>
+  <!-- Login/Register Modal -->
+  <div id="auth-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3 id="auth-title">Sign in to ShopFolio</h3>
+      <input id="email" type="email" placeholder="Email" />
+      <input id="password" type="password" placeholder="Password" />
+      <div class="modal-actions">
+        <button id="auth-switch">New user? Register</button>
+        <button id="auth-submit">Submit</button>
+      </div>
+      <button class="close-modal" id="close-auth">✕</button>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="order-modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Order Confirmed 🎉</h3>
+      <p>Thank you for shopping with <strong>ShopFolio</strong>! Your order is being processed and will be shipped soon.</p>
+      <button class="close-modal" id="close-order">Close</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 ShopFolio. Crafted with 💜 for smart shoppers.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
